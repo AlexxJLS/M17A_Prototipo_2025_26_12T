@@ -1,0 +1,321 @@
+﻿namespace M17A_Prototipo_2025_26_12T.Livro
+{
+    partial class F_Livro
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tb_titulo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tb_autor = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tb_ano = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tb_preco = new System.Windows.Forms.TextBox();
+            this.dtp_data = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.bt_procurar = new System.Windows.Forms.Button();
+            this.pb_capa = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tb_isbn = new System.Windows.Forms.TextBox();
+            this.tb_guardar = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lb_feedback = new System.Windows.Forms.Label();
+            this.dgv_livros = new System.Windows.Forms.DataGridView();
+            this.tb_pesquisa = new System.Windows.Forms.TextBox();
+            this.bt_eliminar = new System.Windows.Forms.Button();
+            this.bt_imprimir = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_capa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_livros)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(69, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Título";
+            // 
+            // tb_titulo
+            // 
+            this.tb_titulo.Location = new System.Drawing.Point(203, 36);
+            this.tb_titulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_titulo.MaxLength = 50;
+            this.tb_titulo.Name = "tb_titulo";
+            this.tb_titulo.Size = new System.Drawing.Size(208, 22);
+            this.tb_titulo.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(69, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 16);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Autor";
+            // 
+            // tb_autor
+            // 
+            this.tb_autor.Location = new System.Drawing.Point(203, 68);
+            this.tb_autor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_autor.Name = "tb_autor";
+            this.tb_autor.Size = new System.Drawing.Size(208, 22);
+            this.tb_autor.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(69, 133);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 16);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Ano";
+            // 
+            // tb_ano
+            // 
+            this.tb_ano.Location = new System.Drawing.Point(203, 133);
+            this.tb_ano.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_ano.Name = "tb_ano";
+            this.tb_ano.Size = new System.Drawing.Size(208, 22);
+            this.tb_ano.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(69, 165);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 16);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Data Aquisição";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(69, 197);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 16);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Preço";
+            // 
+            // tb_preco
+            // 
+            this.tb_preco.Location = new System.Drawing.Point(203, 197);
+            this.tb_preco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_preco.Name = "tb_preco";
+            this.tb_preco.Size = new System.Drawing.Size(208, 22);
+            this.tb_preco.TabIndex = 1;
+            // 
+            // dtp_data
+            // 
+            this.dtp_data.Location = new System.Drawing.Point(203, 165);
+            this.dtp_data.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_data.Name = "dtp_data";
+            this.dtp_data.Size = new System.Drawing.Size(208, 22);
+            this.dtp_data.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(69, 233);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 16);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Capa";
+            // 
+            // bt_procurar
+            // 
+            this.bt_procurar.Location = new System.Drawing.Point(204, 390);
+            this.bt_procurar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_procurar.Name = "bt_procurar";
+            this.bt_procurar.Size = new System.Drawing.Size(151, 32);
+            this.bt_procurar.TabIndex = 3;
+            this.bt_procurar.Text = "Procurar...";
+            this.toolTip1.SetToolTip(this.bt_procurar, "Escolher o ficheiro para a capa do livro.");
+            this.bt_procurar.UseVisualStyleBackColor = true;
+            this.bt_procurar.Click += new System.EventHandler(this.bt_procurar_Click);
+            // 
+            // pb_capa
+            // 
+            this.pb_capa.Location = new System.Drawing.Point(204, 242);
+            this.pb_capa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pb_capa.Name = "pb_capa";
+            this.pb_capa.Size = new System.Drawing.Size(236, 140);
+            this.pb_capa.TabIndex = 4;
+            this.pb_capa.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(69, 100);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 16);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "ISBN";
+            // 
+            // tb_isbn
+            // 
+            this.tb_isbn.Location = new System.Drawing.Point(203, 100);
+            this.tb_isbn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_isbn.Name = "tb_isbn";
+            this.tb_isbn.Size = new System.Drawing.Size(208, 22);
+            this.tb_isbn.TabIndex = 1;
+            // 
+            // tb_guardar
+            // 
+            this.tb_guardar.Location = new System.Drawing.Point(115, 430);
+            this.tb_guardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_guardar.Name = "tb_guardar";
+            this.tb_guardar.Size = new System.Drawing.Size(325, 58);
+            this.tb_guardar.TabIndex = 5;
+            this.tb_guardar.Text = "Guardar";
+            this.toolTip1.SetToolTip(this.tb_guardar, "Adiciona o livro à base de dados.");
+            this.tb_guardar.UseVisualStyleBackColor = true;
+            this.tb_guardar.Click += new System.EventHandler(this.tb_guardar_Click);
+            // 
+            // lb_feedback
+            // 
+            this.lb_feedback.AutoSize = true;
+            this.lb_feedback.Location = new System.Drawing.Point(17, 523);
+            this.lb_feedback.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_feedback.Name = "lb_feedback";
+            this.lb_feedback.Size = new System.Drawing.Size(0, 16);
+            this.lb_feedback.TabIndex = 6;
+            // 
+            // dgv_livros
+            // 
+            this.dgv_livros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_livros.Location = new System.Drawing.Point(461, 75);
+            this.dgv_livros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_livros.Name = "dgv_livros";
+            this.dgv_livros.RowHeadersWidth = 51;
+            this.dgv_livros.Size = new System.Drawing.Size(579, 306);
+            this.dgv_livros.TabIndex = 7;
+            this.dgv_livros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_livros_CellClick);
+            // 
+            // tb_pesquisa
+            // 
+            this.tb_pesquisa.Location = new System.Drawing.Point(461, 34);
+            this.tb_pesquisa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_pesquisa.Name = "tb_pesquisa";
+            this.tb_pesquisa.Size = new System.Drawing.Size(561, 22);
+            this.tb_pesquisa.TabIndex = 8;
+            // 
+            // bt_eliminar
+            // 
+            this.bt_eliminar.Location = new System.Drawing.Point(448, 432);
+            this.bt_eliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_eliminar.Name = "bt_eliminar";
+            this.bt_eliminar.Size = new System.Drawing.Size(192, 55);
+            this.bt_eliminar.TabIndex = 9;
+            this.bt_eliminar.Text = "Eliminar";
+            this.bt_eliminar.UseVisualStyleBackColor = true;
+            this.bt_eliminar.Click += new System.EventHandler(this.bt_eliminar_Click);
+            // 
+            // bt_imprimir
+            // 
+            this.bt_imprimir.Location = new System.Drawing.Point(848, 432);
+            this.bt_imprimir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_imprimir.Name = "bt_imprimir";
+            this.bt_imprimir.Size = new System.Drawing.Size(192, 55);
+            this.bt_imprimir.TabIndex = 9;
+            this.bt_imprimir.Text = "Imprimir";
+            this.bt_imprimir.UseVisualStyleBackColor = true;
+            // 
+            // F_Livro
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.bt_imprimir);
+            this.Controls.Add(this.bt_eliminar);
+            this.Controls.Add(this.tb_pesquisa);
+            this.Controls.Add(this.dgv_livros);
+            this.Controls.Add(this.lb_feedback);
+            this.Controls.Add(this.tb_guardar);
+            this.Controls.Add(this.pb_capa);
+            this.Controls.Add(this.bt_procurar);
+            this.Controls.Add(this.dtp_data);
+            this.Controls.Add(this.tb_preco);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.tb_ano);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.tb_isbn);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.tb_autor);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tb_titulo);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "F_Livro";
+            this.Text = "F_Livro";
+            this.Load += new System.EventHandler(this.F_Livro_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_capa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_livros)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tb_titulo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tb_autor;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tb_ano;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tb_preco;
+        private System.Windows.Forms.DateTimePicker dtp_data;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button bt_procurar;
+        private System.Windows.Forms.PictureBox pb_capa;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox tb_isbn;
+        private System.Windows.Forms.Button tb_guardar;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lb_feedback;
+        private System.Windows.Forms.DataGridView dgv_livros;
+        private System.Windows.Forms.TextBox tb_pesquisa;
+        private System.Windows.Forms.Button bt_eliminar;
+        private System.Windows.Forms.Button bt_imprimir;
+    }
+}
