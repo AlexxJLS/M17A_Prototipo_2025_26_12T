@@ -174,7 +174,7 @@ namespace M17A_Prototipo_2025_26_12T.Livro
         //Devolve um datatable com todos os registos da tabela livros
         public DataTable Listar()
         {
-            return bd.DevolveSQL("SELECT nlivro,titulo,autor,isbn FROM Livros ORDER BY titulo");
+            return bd.DevolveSQL("SELECT nlivro,titulo,autor,isbn, estado FROM Livros ORDER BY titulo");
         }
         
         /// <summary>
@@ -213,6 +213,11 @@ namespace M17A_Prototipo_2025_26_12T.Livro
             };
             return bd.DevolveSQL(sql, parametros);
 
+        }
+
+        public override string ToString()
+        {
+            return this.titulo;
         }
     }
 }
