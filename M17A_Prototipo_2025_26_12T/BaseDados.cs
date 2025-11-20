@@ -61,16 +61,32 @@ namespace M17A_Prototipo_2025_26_12T
             //criar a tabela livros
             //Livros(nlivro,titulo,autor,isbn,ano,data_aquisicao,preco,capa,estado)
             sql = @"CREATE TABLE Livros(
-                nlivro int identity primary key,
-                titulo varchar(50) not null,
-                autor varchar(100),
-                isbn varchar(13),
-                ano int check (ano > 0),
-                data_aquisicao date default getdate(),
-                preco money check (preco>=0),
-                capa varchar(500),
-                estado bit default 1
-                )";
+                    nlivro int identity primary key,
+                    titulo varchar(50) not null,
+                    autor varchar(100),
+                    isbn varchar(13),
+                    ano int check (ano > 0),
+                    data_aquisicao date default getdate(),
+                    preco money check (preco>=0),
+                    capa varchar(500),
+                    estado bit default 1
+                );
+                CREATE TABLE Leitores(
+                    nleitor int identity primary key,
+                    nome varchar(100) NOT NULL,
+                    data_nascimento date,
+                    fotografia varbinary(max),
+                    estado bit default 1
+                );
+                CREATE TABLE Emprestimo(
+                    nemprestimo int identity primary key,
+                    data_emprestimo date default getdate(),
+                    estado bit default 1,
+                    nleitor int references Leitores(nleitor),
+                    nlivro int references Livros(nlivro)
+                );
+                ";
+            
             //TODO: faltam as tabelas leitores e empréstimos
             comando = new SqlCommand (sql, ligacaoSQL);
             comando.ExecuteNonQuery();

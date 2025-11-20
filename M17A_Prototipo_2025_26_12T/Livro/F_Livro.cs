@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +40,10 @@ namespace M17A_Prototipo_2025_26_12T.Livro
                 if (System.IO.File.Exists(temp))
                 {
                     pb_capa.SizeMode = PictureBoxSizeMode.StretchImage;
-                    pb_capa.Image = Image.FromFile(temp);
+                    Stream stream = File.Open(temp, FileMode.Open, FileAccess.Read, FileShare.Delete);
+
+                    pb_capa.Image = Image.FromStream(stream);
+                    stream.Close();
                     ficheiro_capa = temp;
                 }
             }
@@ -149,7 +153,12 @@ namespace M17A_Prototipo_2025_26_12T.Livro
             tb_isbn.Text = l.isbn;
             tb_preco.Text = l.preco.ToString();
             if (System.IO.File.Exists(l.capa))
-                pb_capa.Image = Image.FromFile(l.capa);
+            {
+                Stream stream = File.Open(l.capa, FileMode.Open, FileAccess.Read, FileShare.Delete);
+
+                pb_capa.Image = Image.FromStream(stream);
+                stream.Close();
+            }
             // se não existir capa, limpar a imagem
             else
                 pb_capa.Image = null;
@@ -184,6 +193,35 @@ namespace M17A_Prototipo_2025_26_12T.Livro
                 ListarLivros();
                 LimparForm();
             }
+        }
+
+        /// <summary>
+        /// Sempre que o utilizador altera o texto filtra os livros da datagrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tb_pesquisa_TextChanged(object sender, EventArgs e)
+        {
+            Livro l= new Livro(bd);
+            dgv_livros.DataSource = l.Procurar("titulo", tb_pesquisa.Text);
+        }
+
+        /// <summary>
+        /// Imprime a datagrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bt_imprimir_Click(object sender, EventArgs e)
+        {
+            printDocument1.DefaultPageSettings.Landscape = true;
+            printPreviewDialog1.ShowDialog();
+
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Impressora imprime = new Impressora();
+            imprime.imprimeGrelha(printDocument1, e, dgv_livros);
         }
     }
 }

@@ -198,5 +198,21 @@ namespace M17A_Prototipo_2025_26_12T.Livro
             }
             //TODO: o que fazer caso o livro não seja encontrado?
         }
+        public DataTable Procurar(string campo, string texto_pesquisar)
+        {
+            string sql = $@"SELECT nlivro,titulo,autor,isbn FROM Livros WHERE {campo} LIKE @pesquisa";
+            List<SqlParameter> parametros = new List<SqlParameter>()
+            {
+
+                new SqlParameter()
+                {
+                    ParameterName ="@pesquisa",               //nome do parametro
+                    SqlDbType = SqlDbType.VarChar,              //tipo de dados na bd
+                    Value="%" + texto_pesquisar + "%"                           
+                }
+            };
+            return bd.DevolveSQL(sql, parametros);
+
+        }
     }
 }
