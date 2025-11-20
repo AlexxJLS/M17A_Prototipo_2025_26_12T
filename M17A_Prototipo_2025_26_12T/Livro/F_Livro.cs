@@ -12,15 +12,16 @@ namespace M17A_Prototipo_2025_26_12T.Livro
 {
     public partial class F_Livro : Form
     {
-        string ficheiro_capa="";
+        string ficheiro_capa = "";
         BaseDados bd;
-        int nlivro_escolhido=0;
+        int nlivro_escolhido = 0;
         public F_Livro(BaseDados bd)
         {
             InitializeComponent();
             this.bd = bd;
             ListarLivros();
         }
+        
         /// <summary>
         /// Botão para procurar a imagem que vai ser a capa do livro
         /// </summary>
@@ -45,7 +46,8 @@ namespace M17A_Prototipo_2025_26_12T.Livro
         }
         
         /// <summary>
-        /// Botão para criar um objeto do tipo livro, validar e guardar os dados na bd. Para um livro novo e para atualizar um livro existente
+        /// Botão para criar um objeto do tipo livro, validar e guardar os dados na bd. Para um livro novo
+        /// e para atualizar um livro existente.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -57,37 +59,50 @@ namespace M17A_Prototipo_2025_26_12T.Livro
             novo.titulo = tb_titulo.Text;
             novo.isbn = tb_isbn.Text;
             novo.ano = int.Parse(tb_ano.Text);
-            novo.autor= tb_autor.Text;
+            novo.autor = tb_autor.Text;
             novo.data_aquisicao = dtp_data.Value;
             novo.preco = Decimal.Parse(tb_preco.Text);
             novo.estado = true;
             novo.capa = Utils.PastaPrograma("M17A_Biblioteca_12T") + @"\" + novo.isbn;
             //validar os dados
             List<string> erros = novo.Validar();
-            if (erros.Count>0)
+            if (erros.Count > 0)
             {
                 //mostrar os erros
                 string mensagem = "";
                 foreach (string erro in erros)
-                    mensagem += erro + "; " ;
+                    mensagem += erro + "; ";
                 lb_feedback.Text = mensagem;
-                lb_feedback.ForeColor= Color.Red;
+                lb_feedback.ForeColor = Color.Red;
                 return;
             }
-            //se não existirem erros guardar na bd
-            novo.Adicionar();
-            //copiar a imagem da capa para a pasta do programa
-            if (ficheiro_capa!="")
+            //verificar se é um livro novo
+            if (nlivro_escolhido == 0)
+                //se não existirem erros guardar na bd
+                novo.Adicionar();
+            else
             {
-                if (System.IO.File.Exists(ficheiro_capa)==true)
+                novo.nlivro = nlivro_escolhido;
+                novo.Editar();
+            }
+
+            
+
+            //copiar a imagem da capa para a pasta do programa
+            if (ficheiro_capa != "")
+            {
+                if (System.IO.File.Exists(ficheiro_capa) == true)
                 {
-                    System.IO.File.Copy(ficheiro_capa, novo.capa);
+                    //TODO: Libertar o ficheiro
+                    System.IO.File.Copy(ficheiro_capa, novo.capa, true);
                 }
             }
+
             //limpar o formulário
             LimparForm();
             //atualizar a lista dos livros da datagridview
             ListarLivros();
+
             //feedback ao user
             lb_feedback.Text = "Livro guardado com sucesso.";
             lb_feedback.ForeColor = Color.Black;
@@ -98,9 +113,9 @@ namespace M17A_Prototipo_2025_26_12T.Livro
             //configurar a dgv_livros
             dgv_livros.AllowUserToAddRows = false;
             dgv_livros.AllowUserToDeleteRows = false;
-            dgv_livros.MultiSelect= false;
+            dgv_livros.MultiSelect = false;
             dgv_livros.ReadOnly = true;
-            dgv_livros.SelectionMode= DataGridViewSelectionMode.FullRowSelect;
+            dgv_livros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Livro l = new Livro(bd);
             dgv_livros.DataSource = l.Listar();
         }
@@ -118,24 +133,27 @@ namespace M17A_Prototipo_2025_26_12T.Livro
         }
         private void dgv_livros_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgv_livros.CurrentCell == null)
-                return;
+            if (dgv_livros.CurrentCell == null) return;
             //guardar o nlivro selecionado
             int linha = dgv_livros.CurrentCell.RowIndex;
             if (linha < 0)
                 return;
             nlivro_escolhido = int.Parse(dgv_livros.Rows[linha].Cells[0].Value.ToString());
-            // mostrar os dados do livro selecionado
+            //Mostrar os dados do livro selecionado
             Livro l = new Livro(bd);
             l.nlivro = nlivro_escolhido;
             l.Procurar();
             tb_titulo.Text = l.titulo;
+            tb_ano.Text = l.ano.ToString();
             tb_autor.Text = l.autor;
             tb_isbn.Text = l.isbn;
-            tb_ano.Text = l.ano.ToString();
             tb_preco.Text = l.preco.ToString();
-            pb_capa.Image = Image.FromFile(l.capa);
-
+            if (System.IO.File.Exists(l.capa))
+                pb_capa.Image = Image.FromFile(l.capa);
+            // se não existir capa, limpar a imagem
+            else
+                pb_capa.Image = null;
+            dtp_data.Value = l.data_aquisicao;
         }
 
         private void F_Livro_Load(object sender, EventArgs e)
@@ -146,6 +164,7 @@ namespace M17A_Prototipo_2025_26_12T.Livro
         private void bt_eliminar_Click(object sender, EventArgs e)
         {
             EliminarLivro();
+            //TODO: apagar a capa do livro
         }
         //Apaga o livro escolhido (click ou menu contexto)
         private void EliminarLivro()
@@ -156,7 +175,7 @@ namespace M17A_Prototipo_2025_26_12T.Livro
                 return;
             }
             if (MessageBox.Show("Tem a certeza que pretende eliminar o livro selecionado?",
-                "Confirmar",MessageBoxButtons.YesNo)==DialogResult.Yes)
+                "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Livro apagar = new Livro(bd);
                 apagar.nlivro = nlivro_escolhido;

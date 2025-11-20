@@ -68,7 +68,7 @@
             // tb_titulo
             // 
             this.tb_titulo.Location = new System.Drawing.Point(203, 36);
-            this.tb_titulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_titulo.Margin = new System.Windows.Forms.Padding(4);
             this.tb_titulo.MaxLength = 50;
             this.tb_titulo.Name = "tb_titulo";
             this.tb_titulo.Size = new System.Drawing.Size(208, 22);
@@ -87,7 +87,7 @@
             // tb_autor
             // 
             this.tb_autor.Location = new System.Drawing.Point(203, 68);
-            this.tb_autor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_autor.Margin = new System.Windows.Forms.Padding(4);
             this.tb_autor.Name = "tb_autor";
             this.tb_autor.Size = new System.Drawing.Size(208, 22);
             this.tb_autor.TabIndex = 1;
@@ -105,7 +105,7 @@
             // tb_ano
             // 
             this.tb_ano.Location = new System.Drawing.Point(203, 133);
-            this.tb_ano.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_ano.Margin = new System.Windows.Forms.Padding(4);
             this.tb_ano.Name = "tb_ano";
             this.tb_ano.Size = new System.Drawing.Size(208, 22);
             this.tb_ano.TabIndex = 1;
@@ -133,7 +133,7 @@
             // tb_preco
             // 
             this.tb_preco.Location = new System.Drawing.Point(203, 197);
-            this.tb_preco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_preco.Margin = new System.Windows.Forms.Padding(4);
             this.tb_preco.Name = "tb_preco";
             this.tb_preco.Size = new System.Drawing.Size(208, 22);
             this.tb_preco.TabIndex = 1;
@@ -141,7 +141,7 @@
             // dtp_data
             // 
             this.dtp_data.Location = new System.Drawing.Point(203, 165);
-            this.dtp_data.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_data.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_data.Name = "dtp_data";
             this.dtp_data.Size = new System.Drawing.Size(208, 22);
             this.dtp_data.TabIndex = 2;
@@ -159,7 +159,7 @@
             // bt_procurar
             // 
             this.bt_procurar.Location = new System.Drawing.Point(204, 390);
-            this.bt_procurar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_procurar.Margin = new System.Windows.Forms.Padding(4);
             this.bt_procurar.Name = "bt_procurar";
             this.bt_procurar.Size = new System.Drawing.Size(151, 32);
             this.bt_procurar.TabIndex = 3;
@@ -171,9 +171,10 @@
             // pb_capa
             // 
             this.pb_capa.Location = new System.Drawing.Point(204, 242);
-            this.pb_capa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pb_capa.Margin = new System.Windows.Forms.Padding(4);
             this.pb_capa.Name = "pb_capa";
             this.pb_capa.Size = new System.Drawing.Size(236, 140);
+            this.pb_capa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_capa.TabIndex = 4;
             this.pb_capa.TabStop = false;
             // 
@@ -190,7 +191,7 @@
             // tb_isbn
             // 
             this.tb_isbn.Location = new System.Drawing.Point(203, 100);
-            this.tb_isbn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_isbn.Margin = new System.Windows.Forms.Padding(4);
             this.tb_isbn.Name = "tb_isbn";
             this.tb_isbn.Size = new System.Drawing.Size(208, 22);
             this.tb_isbn.TabIndex = 1;
@@ -198,7 +199,7 @@
             // tb_guardar
             // 
             this.tb_guardar.Location = new System.Drawing.Point(115, 430);
-            this.tb_guardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_guardar.Margin = new System.Windows.Forms.Padding(4);
             this.tb_guardar.Name = "tb_guardar";
             this.tb_guardar.Size = new System.Drawing.Size(325, 58);
             this.tb_guardar.TabIndex = 5;
@@ -220,7 +221,7 @@
             // 
             this.dgv_livros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_livros.Location = new System.Drawing.Point(461, 75);
-            this.dgv_livros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_livros.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_livros.Name = "dgv_livros";
             this.dgv_livros.RowHeadersWidth = 51;
             this.dgv_livros.Size = new System.Drawing.Size(579, 306);
@@ -230,7 +231,7 @@
             // tb_pesquisa
             // 
             this.tb_pesquisa.Location = new System.Drawing.Point(461, 34);
-            this.tb_pesquisa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_pesquisa.Margin = new System.Windows.Forms.Padding(4);
             this.tb_pesquisa.Name = "tb_pesquisa";
             this.tb_pesquisa.Size = new System.Drawing.Size(561, 22);
             this.tb_pesquisa.TabIndex = 8;
@@ -238,7 +239,7 @@
             // bt_eliminar
             // 
             this.bt_eliminar.Location = new System.Drawing.Point(448, 432);
-            this.bt_eliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_eliminar.Margin = new System.Windows.Forms.Padding(4);
             this.bt_eliminar.Name = "bt_eliminar";
             this.bt_eliminar.Size = new System.Drawing.Size(192, 55);
             this.bt_eliminar.TabIndex = 9;
@@ -249,7 +250,7 @@
             // bt_imprimir
             // 
             this.bt_imprimir.Location = new System.Drawing.Point(848, 432);
-            this.bt_imprimir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_imprimir.Margin = new System.Windows.Forms.Padding(4);
             this.bt_imprimir.Name = "bt_imprimir";
             this.bt_imprimir.Size = new System.Drawing.Size(192, 55);
             this.bt_imprimir.TabIndex = 9;
@@ -282,7 +283,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tb_titulo);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F_Livro";
             this.Text = "F_Livro";
             this.Load += new System.EventHandler(this.F_Livro_Load);
